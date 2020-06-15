@@ -13,7 +13,7 @@ export const fetchData = async (country) => {
         return {confirmed, recovered, deaths, lastUpdate };
 
     } catch(error) {
-        console.log(error);    
+        return error;    
     }  
 }
 
@@ -28,12 +28,13 @@ export const fetchDailyData = async () => {
                 date: dailyData.reportDate,
             }
         ));
-        return modifiedData;
+       return modifiedData;
     }
     catch(error){
-        console.log(error);
-    }
+        return error;
+  }
 }
+
 
 
 export const fetchCountries = async () => {
@@ -42,6 +43,6 @@ export const fetchCountries = async () => {
         return countries.map((country) => country.name);
     }
     catch(error){
-        console.log(error);
+        return error;
     }
 }
