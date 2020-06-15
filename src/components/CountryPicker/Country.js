@@ -8,7 +8,7 @@ const Country = ({ handleCountryChange }) => {
     const [fetchedCountries, setFetchedCountries] = useState([]);
     useEffect(() => {
         const fetchAPI = async () => {
-            setFetchedCountries(await fetchCountries(country))
+            setFetchedCountries(await fetchCountries())
         }
         fetchAPI();
     }, [setFetchedCountries]);
